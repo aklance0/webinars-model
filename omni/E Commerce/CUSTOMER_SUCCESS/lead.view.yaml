@@ -1,0 +1,30 @@
+# Reference this view as customer_success__lead
+schema: CUSTOMER_SUCCESS
+table_name: LEAD
+
+dimensions:
+  id:
+    sql: '"ID"'
+    format: ID
+    primary_key: true
+
+  user_id:
+    sql: '"USER_ID"'
+    format: ID
+
+  created_date:
+    sql: '"CREATED_DATE"'
+
+  name:
+    sql: '"NAME"'
+
+  channel:
+    sql: '"CHANNEL"'
+
+  converted_contact_id:
+    sql: '"CONVERTED_CONTACT_ID"'
+    format: ID
+
+measures:
+  count:
+    aggregate_type: count

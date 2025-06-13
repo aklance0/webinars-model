@@ -1,0 +1,32 @@
+# Reference this view as customer_success__account
+schema: CUSTOMER_SUCCESS
+table_name: ACCOUNT
+
+dimensions:
+  id:
+    sql: '"ID"'
+    format: ID
+    primary_key: true
+
+  user_id:
+    sql: '"USER_ID"'
+    format: ID
+
+  created_date:
+    sql: '"CREATED_DATE"'
+
+  name:
+    sql: '"NAME"'
+
+  number_of_employees:
+    sql: '"NUMBER_OF_EMPLOYEES"'
+
+  type:
+    sql: '"TYPE"'
+
+  zipcode:
+    sql: '"ZIPCODE"'
+
+measures:
+  count:
+    aggregate_type: count

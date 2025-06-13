@@ -1,0 +1,8 @@
+base_view: inventory_items
+label: Inventory Management
+group_label: Orders & Fulfillment
+display_order: 2
+
+fields: [ all_views.*, -inventory_items.margin_average ]
+
+joins: {}

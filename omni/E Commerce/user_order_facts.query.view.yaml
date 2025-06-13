@@ -1,0 +1,42 @@
+# Reference this view as user_order_facts
+query:
+  fields:
+    order_items.user_id: user_id
+    order_items.created_at_min: first_order
+    order_items.count: lifetime_order_items
+    order_items.total_sale_price: lifetime_spend
+  base_view: order_items
+  default_group_by: false
+
+dimensions:
+  first_order: {}
+  lifetime_order_items: {}
+
+  user_id:
+    primary_key: true
+
+  lifetime_spend:
+    format: CURRENCY
+
+measures:
+  lifetime_spend_average:
+    sql: ${user_order_facts.lifetime_spend}
+    label: Lifetime Spend Average
+    aggregate_type: average
+
+  lifetime_order_items_sum:
+    sql: ${user_order_facts.lifetime_order_items}
+    aggregate_type: sum
+
+  lifetime_spend_count_distinct:
+    sql: ${user_order_facts.lifetime_spend}
+    format: CURRENCY
+    aggregate_type: count_distinct
+
+filters:
+  order_date:
+    type: timestamp
+
+  status:
+    type: string
+    suggest_from_field: order_items.status

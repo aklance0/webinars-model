@@ -1,0 +1,3 @@
+included_schemas: [ PUBLIC, CUSTOMER_SUCCESS ]
+
+ignored_views: [ product_images_staging ]

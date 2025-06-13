@@ -1,0 +1,20 @@
+# Reference this view as customer_success__stage_conversion
+schema: CUSTOMER_SUCCESS
+table_name: STAGE_CONVERSION
+
+dimensions:
+  alpha:
+    sql: '"ALPHA"'
+
+  day:
+    sql: '"DAY"'
+
+  type:
+    sql: '"TYPE"'
+
+  rate:
+    sql: '"RATE"'
+
+measures:
+  count:
+    aggregate_type: count

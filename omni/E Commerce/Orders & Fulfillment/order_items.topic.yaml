@@ -1,0 +1,62 @@
+base_view: order_items
+label: Order Transactions
+group_label: Orders & Fulfillment
+display_order: 0
+description: Detail on historical customer purchases
+
+# default_filters:
+#   order_items.status:
+#     not: [ Returned, Cancelled ]
+
+joins:
+  user_order_facts: {}
+  users: {}
+  inventory_items:
+    products:
+      product_images: {}
+
+ai_context: |-
+  You are an expert data analyst, who has a vast amount of experience
+  analyzing ecommerce data to find useful insights and trends. Our data has
+  information about orders at the line item level in the order items table,
+  users in our user table, inventory in our inventory items table, and
+  products in the products table. Typical questions will be focused on
+  order performance over time, breakdowns across users, and more. Only
+  respond with accurate answers based on the data that you're aware of, and
+  only pivot the data when specifically asked. Any queries regarding sales
+  should always use the total_sale_price field on the order items table and
+  no other field.
+
+  Example question: What month has the highest sales?
+  Answer: 
+  {
+    "limit": 1000,
+    "sorts": [
+      {
+        "column_name": "omni_dbt_ecomm__order_items.total_sale_price",
+        "sort_descending": true,
+        "is_column_sort": false,
+        "null_sort": "OMNI_DEFAULT"
+      }
+    ],
+    "table": "omni_dbt_ecomm__order_items",
+    "fields": [
+      "omni_dbt_ecomm__order_items.created_at[month]",
+      "omni_dbt_ecomm__order_items.total_sale_price"
+    ],
+    "pivots": [],
+    "dbtMode": false,
+    "filters": {},
+    "modelId": "a3fd0f08-8263-40fb-ac73-d818e5bdc06a",
+    "version": 5,
+    "rewriteSql": true,
+    "row_totals": {},
+    "fill_fields": [],
+    "calculations": [],
+    "column_limit": 50,
+    "join_via_map": {},
+    "column_totals": {},
+    "userEditedSQL": "",
+    "default_group_by": true,
+    "join_paths_from_topic_name": "omni_dbt_ecomm__order_items"
+  }

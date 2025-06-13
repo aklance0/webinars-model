@@ -1,0 +1,69 @@
+# Reference this view as users
+schema: PUBLIC
+table_name: USERS
+
+dimensions:
+  full_name:
+    sql: INITCAP(CONCAT(${first_name}, ' ', ${last_name}))
+    label: Full Name
+
+  id:
+    sql: '"ID"'
+    format: ID
+    links:
+      - url: https://docs.playground.exploreomni.dev/dashboards/0a968d64/edit?f--users.id=%7B%22values%22%3A%5B%22${users.id}%22%5D%7D
+        label: User Dashboard
+    primary_key: true
+
+  first_name:
+    sql: '"FIRST_NAME"'
+
+  last_name:
+    sql: '"LAST_NAME"'
+
+  email:
+    sql: '"EMAIL"'
+
+  age:
+    sql: '"AGE"'
+
+  city:
+    sql: '"CITY"'
+
+  state:
+    sql: '"STATE"'
+
+  country:
+    sql: '"COUNTRY"'
+
+  zip:
+    sql: '"ZIP"'
+
+  latitude:
+    sql: '"LATITUDE"'
+
+  longitude:
+    sql: '"LONGITUDE"'
+
+  gender:
+    sql: '"GENDER"'
+
+  created_at:
+    sql: '"CREATED_AT"'
+
+  traffic_source:
+    sql: '"TRAFFIC_SOURCE"'
+
+measures:
+  count:
+    aggregate_type: count
+
+  new_users_30_days:
+    sql: ${users.id}
+    label: New Users (30 Days)
+    format: ID
+    description: Users created in the last 30 days
+    aggregate_type: count_distinct
+    filters:
+      created_at:
+        time_for_duration: [ 30 days ago, 30 days ]
