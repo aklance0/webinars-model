@@ -1,0 +1,11 @@
+base_view: users
+label: User Acquisition
+group_label: Marketing
+display_order: 1
+description: All registered users
+
+joins:
+  user_order_facts: {}
+  order_items:
+    inventory_items:
+      products: {}

@@ -1,0 +1,17 @@
+# Reference this view as product_images
+schema: PUBLIC
+table_name: PRODUCT_IMAGES
+
+dimensions:
+  id:
+    sql: '"ID"'
+    format: ID
+    primary_key: true
+
+  image:
+    sql: replace( "IMAGE", 'https://', '')
+    label: Image
+
+measures:
+  count:
+    aggregate_type: count
