@@ -20,12 +20,12 @@ dimensions:
     format: ID
     primary_key: true
 
-  status_ordering:
-    sql: CASE WHEN ${status} = 'Complete' THEN 1 WHEN ${status} = 'Shipped' THEN 2
-      WHEN ${status} = 'Processing' THEN 3 WHEN ${status} = 'Cancelled' THEN 4
-      WHEN ${status} = 'Returned' THEN 5 ELSE 6 END
-    label: Status Ordering
-    description: attempting to order fields
+  # status_ordering:
+  #   sql: CASE WHEN ${status} = 'Complete' THEN 1 WHEN ${status} = 'Shipped' THEN 2
+  #     WHEN ${status} = 'Processing' THEN 3 WHEN ${status} = 'Cancelled' THEN 4
+  #     WHEN ${status} = 'Returned' THEN 5 ELSE 6 END
+  #   label: Status Ordering
+  #   description: attempting to order fields
 
   order_id:
     sql: '"ORDER_ID"'
