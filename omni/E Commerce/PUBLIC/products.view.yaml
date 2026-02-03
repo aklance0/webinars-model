@@ -46,3 +46,7 @@ dimensions:
 measures:
   count:
     aggregate_type: count
+
+  sku_count_distinct:
+    sql: ${products.sku}
+    aggregate_type: count_distinct
