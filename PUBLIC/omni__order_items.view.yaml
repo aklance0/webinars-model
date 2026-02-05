@@ -1,4 +1,4 @@
-# Reference this view as order_items
+# Reference this view as omni__order_items
 schema: PUBLIC
 table_name: ORDER_ITEMS
 

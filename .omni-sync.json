@@ -3,7 +3,7 @@
   "branchId": "9c5caf2f-c464-4848-bb25-e7d02d0bc91e",
   "branchName": "test-feature",
   "mode": "combined",
-  "lastSync": "2026-01-21T19:19:41.669Z",
+  "lastSync": "2026-01-21T19:30:14.838Z",
   "fileHashes": {
     "model.yaml": "e7e4907250006cf744f89f8ca144602b19f46d2838140b8f20a521a767b0a7e8",
     "relationships.yaml": "529f04f0a7d2289fa3fd79ae7f14f91554122cf3c38c78b1f69ae16cbb16fbaa",
@@ -31,6 +31,7 @@
     "PUBLIC/pages.view.yaml": "7cda1a6be26ad72571e11f9ca654b912f595c27c1d207a4097dfe100ee76ea40",
     "PUBLIC/product_images.view.yaml": "a56ddf6a2a6b091b30f128da0856e8784c25234c195a3da21ca981826b8954af",
     "PUBLIC/products.view.yaml": "5864461a38c61128d3ecbde0f8c02db674c1e2e4b34b4169b961328596707112",
-    "PUBLIC/users.view.yaml": "65b67e01f1ad7b879eddbd68a4b5db5ef70d2ca8b77b70da25ae72a944dca4e1"
+    "PUBLIC/users.view.yaml": "65b67e01f1ad7b879eddbd68a4b5db5ef70d2ca8b77b70da25ae72a944dca4e1",
+    "PUBLIC/omni__order_items.view.yaml": "87189246d648d8b51956a5da28cfeaa00b2faa11fa5509adaa6580a1bb301455"
   }
 }
